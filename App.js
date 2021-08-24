@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import Main from './src/components/Main';
+
+import BodyMassIndexCalculator from './src/components/BMICalculator';
 
 const styles = StyleSheet.create({
-  container: {
+  conatiner: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    padding: 8,
   },
 });
+
+const App = () => {
+  // return <Main />;
+
+  return (
+    <View style = {styles.conatiner}>
+      <BodyMassIndexCalculator />
+    </View>
+  );
+};
+
+export default App;
