@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import { useField } from 'formik';
 
 import TextInput from './TextInput';
-import {Text} from 'react-native';
 
 const styles = StyleSheet.create({
     errorText: {
@@ -13,6 +12,8 @@ const styles = StyleSheet.create({
   
   const FormikTextInput = ({ name, ...props }) => {
     const [field, meta, helpers] = useField(name);
+
+      // Check if the field is touched and the error message is present
     const showError = meta.touched && meta.error;
   
     return (
